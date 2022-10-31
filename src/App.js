@@ -1,10 +1,14 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import Followers from './components/Followers';
 
 function App() {
   return (
-    <div className="App">
-      Welcome
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<Followers/>} />
+    </Routes>
+    </BrowserRouter>
   );
 }
 
