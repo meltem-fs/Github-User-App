@@ -37,17 +37,14 @@
   }
 }
 
-.main{
+.main {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  text-align: center;
+  width: 50%;
   justify-content: center;
-  width: 80%;
-  margin: auto;
+  margin: 10rem auto;
 }
-
-
-.card{
+.card {
   width: 10rem;
 }

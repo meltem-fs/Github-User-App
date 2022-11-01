@@ -1,15 +1,8 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import './App.css';
-import Followers from './components/Followers';
+import "./App.css";
+import AppRouter from "./router/AppRouter";
 
 function App() {
-  return (
-    <BrowserRouter>
-    <Routes>
-      <Route path='/' element={<Followers/>} />
-    </Routes>
-    </BrowserRouter>
-  );
+  return <AppRouter />;
 }
 
 export default App;
