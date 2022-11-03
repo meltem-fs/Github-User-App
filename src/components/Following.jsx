@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import NavBar from "./NavBar";
 
 const Following = () => {
+  const [change, setChange] = useState(true);
   const [following, setFollowing] = useState([]);
   const getfollowers = JSON.parse(localStorage.getItem("followers"));
   const user = JSON.parse(sessionStorage.getItem("userlogin"));
@@ -24,36 +25,59 @@ const Following = () => {
     getFollowing();
   }, []);
 
+  const fallowingName = following.map((item) => item.login);
+  // console.log(fallowingName)
+  const fallowersName = getfollowers.map((item) => item.login);
 
-  const bad = getfollowers.filter((follower) =>
-    follower.login.includes(following.map((item) => item))
+  // const bad=fallowingName.filter((item)=>item.Following)
+  // console.log(bad);
+  //
+  const bad = fallowingName.filter(
+    (element) => !fallowersName.includes(element)
   );
-  
- console.log('bad :>> ', bad);
+  console.log("bad :>> ", bad);
+  //
+  const good = fallowersName.filter(
+    (element) => !fallowingName.includes(element)
+  );
+  //
+  console.log("good :>> ", good);
 
-  console.log('following', following)
-
+  // console.log('bad :>> ', bad);
+  //
+  // console.log('following', following)
+  console.log(change);
+  //
   return (
     <>
-    <NavBar/>
-      
-       <div>
-        <button >kötüler</button>
-        <button>sevmediklerimiz</button>
-       </div>
-      <div className="main">
-        {following.map((item) => {
-            return (
-              <div className="card">
-                <img src={item?.avatar_url} alt="" />
-                <h4>{item?.login}</h4>
+      <NavBar />
 
-                <a href={item?.html_url} target="_blank">
-                  <button>Gel Gör Beni</button>
-                </a>
-              </div>
-            );
-          })}
+      <div>
+        <button onClick={() => setChange(false)}>kötüler</button>
+        <button onClick={() => setChange(true)}>sevmediklerimiz</button>
+      </div>
+      <div className="main">
+        {change
+          ? good.map((item) => {
+              return (
+                <div className="card">
+                  <h4>{item}</h4>
+                  <a href={`https://github.com/${item}`} target="_blank">
+                    <button>Gel Gör Beni</button>
+                  </a>
+                </div>
+              );
+            })
+          : bad.map((item) => {
+              return (
+                <div className="card">
+                  <h4>{item}</h4>
+                  <a href={`https://github.com/${item}`} target="_blank">
+                    <button>Gel Gör Beni</button>
+                  </a>
+                </div>
+              );
+            })}
       </div>
     </>
   );
