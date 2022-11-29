@@ -16,9 +16,9 @@ const LoginForm = () => {
   console.log("userlogin :>> ", userlogin);
 
   return (
-    <div>
+    <div className="containers">
       <form onSubmit={handleSubmit}>
-        <h1>Kullanıcı İsim Gir</h1>
+        <h1>ENTER YOUR GİTHUB USER NAME</h1>
 
         <input
           onChange={(e) => setUserlogin(e.target.value)}
