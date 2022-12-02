@@ -1,54 +1,20 @@
 .App {
   text-align: center;
 }
-
-.main {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  width: 50%;
-  justify-content: center;
-  margin: 10rem auto;
+body{
+  background-color: rgb(255, 226, 226);
 }
-.card {
-  width: 10rem;
-}
-
-.containers{
-  height: 100vh;
-  width: 100vw;
-  text-align: center;
-  background-image: url(https://cdn.pixabay.com/photo/2019/05/19/23/47/clouds-4215608_960_720.jpg);
-  background-size: cover;
-  background-position: top;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-form{
-  width: 35rem;
-}
-h1{
+a{
+  text-decoration: none;
+  color:#fff;
   padding: 1rem;
-  text-shadow: 1px 1px 4px rgb(155, 173, 242);
 }
-.containers input{
-  padding: 0.5rem 2rem;
-  width: 19rem;
-  border: none;
-  border-radius: 5px;
-  background-color: rgb(214, 253, 255);
-  margin-bottom: 2rem;
+a:hover{
+  text-decoration: none;
+  color:rgb(106, 3, 3);
 }
 
-.containers button{
-  padding: 0.6rem 2rem;
-  border: none;
-  border-radius: 10px;
-  background-color: lightblue;
-  box-shadow: 1px 1px 5px rgb(135, 135, 135);
-}
-button:hover{
-  transform: scale(1.03);
+.pagination-section{
+  display: flex;
+  justify-content: center;
 }
